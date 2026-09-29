@@ -62,5 +62,6 @@ document.querySelector("#back-customer").addEventListener("click", () => showSte
 document.querySelector("#task-search").addEventListener("input", event => { state.search = event.target.value; renderCatalog(); });
 document.querySelector("#to-review").addEventListener("click", () => { populateReview(); showStep(3); });
 document.querySelector("#back-work").addEventListener("click", () => showStep(2));
+document.querySelector("#print-quote").addEventListener("click", () => window.print());
 document.querySelector("#present-quote").addEventListener("click", () => { document.querySelector("#present-quote").textContent = "Presented ✓"; document.querySelector("#present-quote").disabled = true; document.querySelector("#toast").textContent = "Quote ready to present — snapshot saved in this prototype."; document.querySelector("#toast").classList.add("show"); setTimeout(() => document.querySelector("#toast").classList.remove("show"), 3500); });
 loadDraft();
