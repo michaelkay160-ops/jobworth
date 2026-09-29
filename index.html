@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="JobWorth flat-rate quoting prototype for electricians" />
+    <title>JobWorth — Quote builder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="."><span class="brand-mark">J</span><span>JobWorth</span></a>
+      <span class="prototype-badge">V1 prototype</span>
+    </header>
+
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Electrician quoting</p>
+          <h1>Build a quote with confidence.</h1>
+          <p class="hero-copy">Select the work, answer the important scope questions, and get a consistent flat-rate price in minutes.</p>
+        </div>
+        <div class="hero-stat"><strong id="task-count">0</strong><span>tasks in quote</span></div>
+      </section>
+
+      <div class="progress" aria-label="Quote progress">
+        <div class="progress-step active" data-step="1"><span>1</span>Customer</div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="2"><span>2</span>Work</div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="3"><span>3</span>Review</div>
+      </div>
+
+      <section id="step-customer" class="card step-panel">
+        <div class="card-heading"><div><p class="eyebrow">Start a quote</p><h2>Who is this quote for?</h2></div><span class="step-label">Step 1 of 3</span></div>
+        <div class="form-grid">
+          <label>Customer name<input id="customer-name" autocomplete="name" placeholder="Alex Morgan" /></label>
+          <label>Phone or email<input id="customer-contact" autocomplete="email" placeholder="alex@example.com" /></label>
+          <label class="wide">Service address<input id="service-address" autocomplete="street-address" placeholder="123 Main Street, Raleigh, NC" /></label>
+          <label class="wide">Project title<input id="project-title" placeholder="Electrical updates" /></label>
+        </div>
+        <div class="actions"><span class="hint" id="customer-error" role="alert"></span><button class="button primary" id="to-work">Continue to work <span>→</span></button></div>
+      </section>
+
+      <section id="step-work" class="step-panel hidden">
+        <div class="work-layout">
+          <div class="card catalog-card">
+            <div class="card-heading"><div><p class="eyebrow">Price book</p><h2>Add work</h2></div><span class="step-label">Step 2 of 3</span></div>
+            <label class="search-wrap"><span aria-hidden="true">⌕</span><input id="task-search" placeholder="Search outlets, breakers, fans..." /></label>
+            <div id="category-tabs" class="category-tabs" aria-label="Categories"></div>
+            <div id="task-list" class="task-list"></div>
+          </div>
+          <aside class="card quote-card">
+            <div class="quote-card-header"><div><p class="eyebrow">Current quote</p><h2 id="quote-customer">New quote</h2></div><span class="draft-pill">Draft</span></div>
+            <div id="selected-tasks" class="selected-tasks"><div class="empty-state">Your selected work will appear here.</div></div>
+            <div class="totals"><div><span>Calculated price</span><strong id="quote-total">$0</strong></div><small>Based on the JobWorth starter price book</small></div>
+            <div class="actions stacked"><button class="button primary" id="to-review" disabled>Review quote <span>→</span></button><button class="button text" id="back-customer">← Edit customer</button></div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="step-review" class="step-panel hidden">
+        <div class="card review-card">
+          <div class="card-heading"><div><p class="eyebrow">Ready to share</p><h2>Review your quote</h2></div><span class="step-label">Step 3 of 3</span></div>
+          <div class="review-grid"><div><p class="section-label">Customer</p><h3 id="review-customer">—</h3><p id="review-address" class="muted">—</p></div><div><p class="section-label">Project</p><h3 id="review-project">—</h3><p class="muted">Flat-rate quote</p></div></div>
+          <div id="review-lines" class="review-lines"></div>
+          <div class="review-total"><span>Total</span><strong id="review-total">$0</strong></div>
+          <div class="customer-note"><p class="section-label">Customer view</p><p>This quote includes the work listed above, standard installation materials, and testing. Unforeseen conditions or work outside the listed scope may require a separate quote.</p></div>
+          <div class="actions"><button class="button text" id="back-work">← Edit work</button><button class="button primary" id="present-quote">Present quote <span>↗</span></button></div>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
