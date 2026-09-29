@@ -18,3 +18,5 @@ coverage/
 # Local runtime data
 .data/
 .tmp/
+server/.data/
+server/.data/
