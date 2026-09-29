@@ -11,3 +11,9 @@ JobWorth is an electrician-first flat-rate quoting product. V1 helps a contracto
 
 The starter price-book data is intentionally marked illustrative and must be validated against pilot contractors and local costs before production use.
 
+
+## Prototype
+
+The current dependency-free prototype is available at [index.html](index.html). It implements the first quote flow slice: customer setup, task selection, deterministic pricing, review, and customer presentation.
+
+For a browser preview, enable GitHub Pages for the `main` branch or open `index.html` locally.
