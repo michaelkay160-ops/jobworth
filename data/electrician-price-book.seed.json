@@ -1,0 +1,32 @@
+{
+  "seedStatus": "illustrative-unvalidated",
+  "currency": "USD",
+  "categories": [
+    {"id": "outlets-switches", "name": "Outlets & switches", "displayOrder": 1},
+    {"id": "lighting", "name": "Lighting & fans", "displayOrder": 2},
+    {"id": "circuits", "name": "Circuits & wiring", "displayOrder": 3},
+    {"id": "panels", "name": "Panels & breakers", "displayOrder": 4},
+    {"id": "safety", "name": "Safety & protection", "displayOrder": 5},
+    {"id": "ev", "name": "EV charging", "displayOrder": 6},
+    {"id": "diagnostics", "name": "Troubleshooting", "displayOrder": 7}
+  ],
+  "materials": [
+    {"id": "mat-receptacle-standard", "sku": "MAT-OUTLET-STD", "name": "Standard receptacle", "unit": "each", "unitCostMinor": 250},
+    {"id": "mat-switch-standard", "sku": "MAT-SWITCH-STD", "name": "Standard single-pole switch", "unit": "each", "unitCostMinor": 200},
+    {"id": "mat-gfci", "sku": "MAT-GFCI", "name": "GFCI receptacle", "unit": "each", "unitCostMinor": 1800},
+    {"id": "mat-wire-connectors", "sku": "MAT-CONNECTORS", "name": "Wire/connectors allowance", "unit": "job", "unitCostMinor": 500},
+    {"id": "mat-breaker-20a", "sku": "MAT-BREAKER-20A", "name": "20A breaker", "unit": "each", "unitCostMinor": 1200},
+    {"id": "mat-surge", "sku": "MAT-SURGE", "name": "Whole-home surge protector", "unit": "each", "unitCostMinor": 8500}
+  ],
+  "tasks": [
+    {"id": "task-outlet-standard", "sku": "ELEC-OUTLET-STD", "name": "Replace standard receptacle", "categoryId": "outlets-switches", "laborHours": 0.5, "includedMaterialIds": ["mat-receptacle-standard", "mat-wire-connectors"], "status": "active"},
+    {"id": "task-outlet-gfci", "sku": "ELEC-OUTLET-GFCI", "name": "Replace GFCI receptacle", "categoryId": "outlets-switches", "laborHours": 0.75, "includedMaterialIds": ["mat-gfci", "mat-wire-connectors"], "status": "active"},
+    {"id": "task-switch-standard", "sku": "ELEC-SWITCH-STD", "name": "Replace standard switch", "categoryId": "outlets-switches", "laborHours": 0.5, "includedMaterialIds": ["mat-switch-standard", "mat-wire-connectors"], "status": "active"},
+    {"id": "task-breaker-20a", "sku": "ELEC-BREAKER-20A", "name": "Replace single-pole breaker", "categoryId": "panels", "laborHours": 0.5, "includedMaterialIds": ["mat-breaker-20a"], "status": "active"},
+    {"id": "task-surge-protector", "sku": "ELEC-SURGE", "name": "Install whole-home surge protector", "categoryId": "safety", "laborHours": 1.5, "includedMaterialIds": ["mat-surge", "mat-wire-connectors"], "status": "active"},
+    {"id": "task-diagnostic-basic", "sku": "ELEC-DIAG-BASIC", "name": "Electrical troubleshooting visit", "categoryId": "diagnostics", "laborHours": 1.0, "includedMaterialIds": ["mat-wire-connectors"], "status": "active"},
+    {"id": "task-dedicated-circuit", "sku": "ELEC-CIRCUIT-DEDICATED", "name": "Install dedicated branch circuit", "categoryId": "circuits", "laborHours": 3.0, "includedMaterialIds": ["mat-wire-connectors"], "status": "active"},
+    {"id": "task-ceiling-fan", "sku": "ELEC-FAN", "name": "Install customer-supplied ceiling fan", "categoryId": "lighting", "laborHours": 2.0, "includedMaterialIds": ["mat-wire-connectors"], "status": "active"},
+    {"id": "task-ev-ready", "sku": "ELEC-EV-READY", "name": "Install EV charger circuit allowance", "categoryId": "ev", "laborHours": 4.0, "includedMaterialIds": ["mat-wire-connectors"], "status": "active"}
+  ]
+}
