@@ -1,0 +1,10 @@
+name = "jobworth-api"
+main = "src/index.js"
+compatibility_date = "2026-09-29"
+
+# After creating the D1 database in Cloudflare, replace the placeholder below
+# with the database ID shown in the D1 dashboard.
+[[d1_databases]]
+binding = "DB"
+database_name = "jobworth"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
